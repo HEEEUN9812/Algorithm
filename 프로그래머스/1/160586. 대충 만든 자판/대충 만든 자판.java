@@ -10,7 +10,8 @@ class Solution {
                 char ch = keymap[i].charAt(j);
                 if(map.containsKey(ch)){
                     int index = map.get(ch);
-                    map.put(ch, Math.min(index, j + 1));
+                    if(index > j+1)
+                    map.put(ch, j + 1);
                 }
                 else {
                     map.put(ch, j+1);
